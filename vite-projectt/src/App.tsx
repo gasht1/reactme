@@ -1,16 +1,13 @@
-import ListGroup from "./components/ListGroup";
-import Message from "./components/message";
+import MyAlert from "./components/MyAlert";
 
 function App() {
-  let items = [
-    { name: "gondar" },
-    { name: "Bahirdar" },
-    { name: "Adiss Ababa" },
-  ];
   return (
     <div>
       <h1>
-        <ListGroup items={items} heading={"gashaw me"} />
+        <MyAlert>
+          {" "}
+          hello <span> gashti</span>
+        </MyAlert>
       </h1>
     </div>
   );
