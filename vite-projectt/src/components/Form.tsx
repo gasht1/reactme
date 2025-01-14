@@ -1,8 +1,9 @@
 import { FormEvent, useState } from "react";
-import { number, string, z } from "zod";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 const Schema = z.object({
-  name: string().min(3),
-  age: number().min(18),
+  name: z.string().min(3),
+  age: z.number().min(18),
 });
 type FormData = z.infer<typeof Schema>;
 
