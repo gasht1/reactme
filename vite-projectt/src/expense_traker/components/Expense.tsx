@@ -12,6 +12,7 @@ interface Props {
   ondelete: (id: number) => void;
 }
 const Expense = ({ expenses, ondelete }: Props) => {
+  if (expenses.length == 0) return null;
   return (
     <table className="">
       <thead className="">
