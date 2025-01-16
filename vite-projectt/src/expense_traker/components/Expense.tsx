@@ -38,6 +38,19 @@ const Expense = ({ expenses, ondelete }: Props) => {
           </tr>
         ))}
       </tbody>
+      <tfoot className="">
+        <tr>
+          <td> total</td>
+          <td>
+            {" "}
+            {expenses
+              .reduce((acc, expense) => expense.amount + acc, 0)
+              .toFixed(2)}
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
     </table>
   );
 };
