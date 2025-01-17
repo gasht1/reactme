@@ -4,8 +4,10 @@
 
 import { useState } from "react";
 import Expense from "./expense_traker/components/Expense";
+import ExpenseForm from "./expense_traker/components/ExpenseForm";
 
 function App() {
+  const [selectCatagorey, setselectCatagorey] = useState();
   const [expenseData, setexpenseData] = useState([
     { id: 1, description: " aaaa", amount: 20, category: "utility" },
     { id: 2, description: " bbbb", amount: 30, category: "utility" },
@@ -15,6 +17,9 @@ function App() {
   //const [Alertvisible, setAlertvisible] = useState(false);
   return (
     <div>
+      <div>
+        <ExpenseForm onSelectCategory={(category) => console.log(category)} />
+      </div>
       {
         <Expense
           expenses={expenseData}
