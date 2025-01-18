@@ -5,7 +5,9 @@
 import { useState } from "react";
 import Expense from "./expense_traker/components/Expense";
 import ExpenseForm from "./expense_traker/components/ExpenseForm";
+import ExpenseRform from "./expense_traker/components/expenseRform";
 
+export const catagories = ["utility", "entertainment", "groceries"];
 function App() {
   const [selectCatagorey, setselectCatagorey] = useState("");
 
@@ -20,7 +22,10 @@ function App() {
     : expenseData;
   //const [Alertvisible, setAlertvisible] = useState(false);
   return (
-    <div>
+    <div className=" ml-7">
+      <div className="mb-3">
+        <ExpenseRform />
+      </div>
       <div>
         <ExpenseForm
           onSelectCategory={(category) => setselectCatagorey(category)}

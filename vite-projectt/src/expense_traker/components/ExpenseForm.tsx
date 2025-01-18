@@ -1,15 +1,15 @@
 import React from "react";
-
+import { catagories } from "../../App";
 interface Props {
   onSelectCategory: (category: string) => void;
 }
 const ExpenseForm = ({ onSelectCategory }: Props) => {
   return (
     <select onChange={(e) => onSelectCategory(e.target.value)}>
-      <option value="">AllCategory</option>
-      <option value="utility">utility</option>
-      <option value="category">category</option>
-      <option value="groceries">Groceries</option>
+      <option>All category</option>
+      {catagories.map((category) => (
+        <option value="category">{category}</option>
+      ))}
     </select>
   );
 };
